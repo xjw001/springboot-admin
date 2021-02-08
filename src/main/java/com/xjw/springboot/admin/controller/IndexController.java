@@ -9,6 +9,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.net.ssl.HttpsURLConnection;
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -30,6 +31,12 @@ public class IndexController {
             model.addAttribute("msg","账号或者密码错误");
             return "login";
         }
+    }
+
+    @GetMapping("/loginOut")
+    public String loginOut(HttpSession session){
+        session.removeAttribute("loginUser");
+        return "login";
     }
 
     @GetMapping("/main.html")
