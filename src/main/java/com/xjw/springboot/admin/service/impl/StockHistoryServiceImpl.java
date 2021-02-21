@@ -4,7 +4,11 @@ import com.xjw.springboot.admin.bean.StockHistory;
 import com.xjw.springboot.admin.mapper.StockHistoryMapper;
 import com.xjw.springboot.admin.service.StockHistoryService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.Collection;
 
 /**
  * <p>
@@ -17,4 +21,15 @@ import org.springframework.stereotype.Service;
 @Service
 public class StockHistoryServiceImpl extends ServiceImpl<StockHistoryMapper, StockHistory> implements StockHistoryService {
 
+    @Autowired
+    StockHistoryMapper stockHistoryMapper;
+
+    @Override
+    @Transactional
+    public boolean saveBatch(Collection<StockHistory> entityList) {
+        for (StockHistory stockHistory : entityList) {
+            stockHistoryMapper.insert(stockHistory);
+        }
+        return true;
+    }
 }
