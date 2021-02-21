@@ -9,6 +9,6 @@ public class StockController {
 
     @GetMapping("/stockinfo")
     public String stockInfo(){
-        return "stock_list";
+        return "stock/stock_list";
     }
 }
