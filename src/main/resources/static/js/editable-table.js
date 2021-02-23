@@ -123,7 +123,10 @@ var EditableTable = function () {
                     /* Editing this row and want to save it */
                     saveRow(oTable, nEditing);
                     nEditing = null;
+
                     alert("Updated! Do not forget to do some ajax to sync with backend :)");
+                    //var jqInputs = $('input', nRow);
+
                 } else {
                     /* No edit in progress - let's start one */
                     editRow(oTable, nRow);

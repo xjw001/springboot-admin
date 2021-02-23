@@ -50,6 +50,12 @@
 
         <!--sidebar nav start-->
         <ul class="nav nav-pills nav-stacked custom-nav">
+            <li class="menu-list"><a href=""><i class="fa fa-rmb"></i><span>股票行情</span></a>
+                <ul class="sub-menu-list">
+                    <li><a th:href="@{/stockinfo}">股票信息</a></li>
+                    <li><a href="index.html">历史行情</a></li>
+                </ul>
+            </li>
             <li class="menu-list"><a th:href="@{/main.html}"><i class="fa fa-home"></i> <span>Dashboard</span></a>
                 <ul class="sub-menu-list">
                     <li><a href="index_alt.html"> Dashboard 1</a></li>
