@@ -30,7 +30,7 @@ public class StockHistoryMsgTest {
 
     @Test
     void showStockInfo(){
-        for (int i = 1; i < 3; i++) {
+        for (int i = 1; i < 8; i++) {
             addSotckHistory(i);
         }
     }
@@ -87,12 +87,12 @@ public class StockHistoryMsgTest {
 
         }
 
-        System.out.println(stockEnum.getStockName());
-        System.out.println("开始日期:"+startDate);
-        System.out.println("结束日期:"+endDate);
-        System.out.println("上涨天数:"+upcount+",累计上涨:"+upbd.toString()+"%");
-        System.out.println("下跌天数:"+lowcount+",累计下跌:"+lowbd.toString()+"%");
-
+        System.out.print(stockEnum.getStockName());
+        System.out.print("  开始日期:"+startDate);
+        System.out.print("  结束日期:"+endDate);
+        System.out.print("  上涨天数:"+upcount+",累计上涨:"+upbd.toString()+"%");
+        System.out.print("  下跌天数:"+lowcount+",累计下跌:"+lowbd.toString()+"%");
+        System.out.println();
 
        // stockHistoryService.saveBatch(list);
 //        log.info("添加成功");
