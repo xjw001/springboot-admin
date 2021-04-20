@@ -8,7 +8,8 @@ public enum  StockEnum {
     STOCK4(4,"sz","002916","深南电路"),
     STOCK5(5,"sh","600559","老白干酒"),
     STOCK6(6,"sh","600779","水井坊"),
-    STOCK7(7,"sz","000333","美的集团");
+    STOCK7(7,"sz","000333","美的集团"),
+    STOCK8(8,"sz","000002","万科");
     public final Integer id;
     public final String type;
     public final String sotckCode;

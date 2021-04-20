@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.xjw.springboot.admin.bean.StockHistory;
 import com.xjw.springboot.admin.service.StockHistoryService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -30,7 +31,7 @@ public class StockHistoryMsgTest {
 
     @Test
     void showStockInfo(){
-        for (int i = 1; i < 8; i++) {
+        for (int i = 1; i < 9; i++) {
             addSotckHistory(i);
         }
     }
@@ -87,11 +88,12 @@ public class StockHistoryMsgTest {
 
         }
 
-        System.out.print(stockEnum.getStockName());
+        System.out.print(StringUtils.rightPad(stockEnum.getStockName(),5," ")+"|");
         System.out.print("  开始日期:"+startDate);
         System.out.print("  结束日期:"+endDate);
-        System.out.print("  上涨天数:"+upcount+",累计上涨:"+upbd.toString()+"%");
-        System.out.print("  下跌天数:"+lowcount+",累计下跌:"+lowbd.toString()+"%");
+        System.out.print("  上涨天数:"+upcount+" 累计上涨:"+upbd.toString()+"%");
+        System.out.print("  下跌天数:"+lowcount+" 累计下跌:"+lowbd.toString()+"%");
+        System.out.print("  整体涨幅:"+upbd.add(lowbd).toString()+"%");
         System.out.println();
 
        // stockHistoryService.saveBatch(list);
