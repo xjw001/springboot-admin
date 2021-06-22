@@ -2,7 +2,9 @@ package com.xjw.springboot.admin.controller;
 
 import com.xjw.springboot.admin.bean.Person;
 import com.xjw.springboot.admin.bean.User;
+import com.xjw.springboot.admin.service.StockHistoryService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.ObjectUtils;
@@ -18,6 +20,9 @@ import javax.servlet.http.HttpSession;
 @Controller
 @Slf4j
 public class IndexController {
+
+    @Autowired
+    private StockHistoryService stockHistoryService;
 
     @GetMapping(value = {"/","/login"})
     public String loginPage(){
@@ -58,7 +63,20 @@ public class IndexController {
 
     @RequestMapping("/ext/msg")
     @ResponseBody
-    public Person getAllUsers(){
+    public Person getAllUsers() throws Exception {
+//        try {
+//            System.out.println("try");
+//            int value = 10/0;
+//        } catch (Exception e) {
+//            if(1 ==1 ) {
+//                throw new Exception("xxxx");
+//            }
+//            System.out.println("exception");
+//            e.printStackTrace();
+//        } finally {
+//            System.out.println("finally");
+//        }
+        stockHistoryService.dobusiness("zhangsan");
         return new Person("zhangsan","123455");
     }
 }

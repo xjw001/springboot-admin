@@ -4,6 +4,7 @@ import com.xjw.springboot.admin.bean.StockHistory;
 import com.xjw.springboot.admin.mapper.StockHistoryMapper;
 import com.xjw.springboot.admin.service.StockHistoryService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -19,6 +20,7 @@ import java.util.Collection;
  * @since 2021-02-21
  */
 @Service
+@Slf4j
 public class StockHistoryServiceImpl extends ServiceImpl<StockHistoryMapper, StockHistory> implements StockHistoryService {
 
     @Autowired
@@ -31,5 +33,11 @@ public class StockHistoryServiceImpl extends ServiceImpl<StockHistoryMapper, Sto
             stockHistoryMapper.insert(stockHistory);
         }
         return true;
+    }
+
+    @Override
+    public void dobusiness(String name) {
+        int v = 10/0;
+        log.info("业务方法");
     }
 }

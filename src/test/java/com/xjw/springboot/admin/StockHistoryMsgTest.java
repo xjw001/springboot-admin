@@ -53,7 +53,7 @@ public class StockHistoryMsgTest {
             JSONArray jsonArrayItem = (JSONArray)record.get(i);
             int year = Integer.parseInt(jsonArrayItem.getString(0).substring(0, 4));
             int month = Integer.parseInt(jsonArrayItem.getString(0).substring(5, 7));
-            if(year <2021 || month < 4){
+            if(year <2021 || month < 1){
                 continue;
             }
             if(startDate == null){

@@ -13,4 +13,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface StockHistoryService extends IService<StockHistory> {
 
+    void dobusiness(String name);
 }
