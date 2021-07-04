@@ -1,9 +1,17 @@
 package com.xjw.springboot.admin.controller;
 
 
+import com.xjw.springboot.admin.bean.Msg;
+import com.xjw.springboot.admin.bean.StockHistory;
+import com.xjw.springboot.admin.service.StockHistoryService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * <p>
@@ -16,6 +24,20 @@ import org.springframework.stereotype.Controller;
 @Controller
 @RequestMapping("/stockHistory")
 public class StockHistoryController {
+
+    @Autowired
+    private StockHistoryService stockHistoryService;
+
+    @RequestMapping("/add")
+    @ResponseBody
+    public Msg addStockHistory(){
+        StockHistory stockHistory = new StockHistory();
+        stockHistory.setStockCode("000003");
+        List list = new ArrayList();
+        list.add(stockHistory);
+        stockHistoryService.saveBatch(list);
+        return Msg.success();
+    }
 
 }
 
