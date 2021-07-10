@@ -25,6 +25,8 @@ import java.util.List;
 @RequestMapping("/stockHistory")
 public class StockHistoryController {
 
+    public static final String REDIS_USER_TOKEN = "token";
+
     @Autowired
     private StockHistoryService stockHistoryService;
 
