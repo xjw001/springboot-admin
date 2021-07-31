@@ -7,7 +7,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @MapperScan("com.xjw.springboot.admin.mapper")
 @SpringBootApplication
-@EnableTransactionManagement
 public class SpringbootAdminApplication {
 
     public static void main(String[] args) {

@@ -24,5 +24,13 @@ CREATE TABLE `stock_history` (
   `twenty_avg_amount` decimal(10,3) DEFAULT NULL COMMENT '20日均量',
   `trade_rate` decimal(10,3) DEFAULT NULL COMMENT '换手率',
   PRIMARY KEY (`history_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
+
+CREATE TABLE `sys_user` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_account` varchar(255) DEFAULT NULL,
+  `user_name` varchar(255) DEFAULT NULL,
+  `password` varchar(255)  DEFAULT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
